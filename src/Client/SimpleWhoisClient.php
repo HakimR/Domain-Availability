@@ -15,11 +15,14 @@ class SimpleWhoisClient implements WhoisClientInterface
 
     protected $port = 43;
 
+    protected $timeout;
+
     protected $response;
     
-    public function __construct($server = false, $port = 43) {
+    public function __construct($server = false, $port = 43, $timeout = 60) {
         if ($server) $this->server = $server;
         if ($port) $this->port = $port;
+        $this->timeout = $timeout;
     }
 
     /**
@@ -31,7 +34,7 @@ class SimpleWhoisClient implements WhoisClientInterface
         $response = null;
 
         // Get the filePointer to the socket connection
-        $filePointer = @fsockopen($this->server, $this->port); // Suppress warnings
+        $filePointer = @fsockopen($this->server, $this->port, null, null, $this->timeout); // Suppress warnings
 
         // Check if we have a file pointer
         if ($filePointer) {
@@ -103,6 +106,20 @@ class SimpleWhoisClient implements WhoisClientInterface
     public function setPort($port)
     {
         $this->port = $port;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTimeout() {
+        return $this->timeout;
+    }
+
+    /**
+     * @param int $timeout
+     */
+    public function setTimeout($timeout) {
+        $this->timeout = $timeout;
     }
 
 
