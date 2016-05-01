@@ -8,14 +8,14 @@ A PHP library used to check domain name availability. Forked from HelgeSverre so
 
 ## Install
 ```bash
-$ composer require --dev HakimR/domain-availability
+$ composer require --dev rwebservices/domain-availability
 ```
 or 
 
 ```
 {
     "require": {
-        "HakimR/domain-availability": "~0.2.0"
+        "rwebservices/domain-availability": "~0.2.0"
     }
 }
 ```
@@ -122,6 +122,7 @@ you need to integrate with and I will give you a quote for my time.
 
 - Research and code by [Helge Sverre](https://helgesverre.com)
 - Domain Parser by [Jeremy Kendall](https://github.com/jeremykendall)
+- Maintained by [Hakim Rachidi] (http://www.hakim-rachidi.com)
 
 ## Notes
 
