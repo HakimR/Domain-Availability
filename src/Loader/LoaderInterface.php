@@ -1,6 +1,6 @@
 <?php
 
-namespace Helge\Loader;
+namespace RWebServices\DomainAvailability\Loader;
 
 interface LoaderInterface
 {

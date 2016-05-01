@@ -1,16 +1,16 @@
 <?php
 
-namespace Helge\Tests;
+namespace RWebServices\DomainAvailability\Tests;
 
-use Helge\Client\SimpleWhoisClient;
-use Helge\Loader\JsonLoader;
-use Helge\Service\DomainAvailability;
+use RWebServices\DomainAvailability\Client\SimpleWhoisClient;
+use RWebServices\DomainAvailability\Loader\JsonLoader;
+use RWebServices\DomainAvailability\Service\DomainAvailability;
 
 
 class DomainAvailabilityTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Helge\Service\DomainAvailability
+     * @var \RWebServices\DomainAvailability\Service\DomainAvailability
      */
     protected $service;
 

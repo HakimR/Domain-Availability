@@ -6,7 +6,7 @@
  * Time: 14:30
  */
 
-namespace Helge\Loader;
+namespace RWebServices\DomainAvailability\Loader;
 
 
 class JsonLoader implements LoaderInterface

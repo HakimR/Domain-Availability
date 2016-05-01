@@ -2,12 +2,12 @@
 
 namespace Helge\Tests;
 
-use Helge\Client\SimpleWhoisClient;
+use RWebServices\DomainAvailability\Client\SimpleWhoisClient;
 
 class SimpleWhoisClientTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Helge\Client\WhoisClientInterface
+     * @var \RWebServices\DomainAvailability\Client\WhoisClientInterface
      */
     protected $whoisClient;
 

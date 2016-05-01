@@ -2,12 +2,12 @@
 
 namespace Helge\Tests;
 
-use Helge\Loader\JsonLoader;
+use RWebServices\DomainAvailability\Loader\JsonLoader;
 
 class JsonLoaderTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Helge\Loader\JsonLoader
+     * @var \RWebServices\DomainAvailability\Loader\JsonLoader
      */
     protected $jsonLoader;
 

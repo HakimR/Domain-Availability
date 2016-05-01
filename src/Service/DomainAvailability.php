@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Helge\Service;
+namespace RWebServices\DomainAvailability\Service;
 
-use Helge\Client\WhoisClientInterface;
-use Helge\Loader\LoaderInterface;
+use RWebServices\DomainAvailability\Client\WhoisClientInterface;
+use RWebServices\DomainAvailability\Loader\LoaderInterface;
 use Pdp\Parser;
 use Pdp\PublicSuffixListManager;
 

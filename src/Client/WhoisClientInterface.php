@@ -1,6 +1,6 @@
 <?php
 
-namespace Helge\Client;
+namespace RWebServices\DomainAvailability\Client;
 
 interface WhoisClientInterface
 {

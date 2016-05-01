@@ -8,9 +8,9 @@
 
 require './vendor/autoload.php';
 
-use Helge\Loader\JsonLoader;
-use Helge\Client\SimpleWhoisClient;
-use Helge\Service\DomainAvailability;
+use RWebServices\DomainAvailability\Loader\JsonLoader;
+use RWebServices\DomainAvailability\Client\SimpleWhoisClient;
+use RWebServices\DomainAvailability\Service\DomainAvailability;
 
 $whoisClient = new SimpleWhoisClient();
 $dataLoader = new JsonLoader("src/data/servers.json");
