@@ -1,6 +1,8 @@
 <?php
 
 namespace RWebServices\DomainAvailability\Client;
+use RWebServices\DomainAvailability\Exception\ReadTimeOutException;
+use RWebServices\DomainAvailability\Exception\ConnectionException;
 
 
 /**
@@ -34,6 +36,8 @@ class SimpleWhoisClient implements WhoisClientInterface
      */
     public function query($domain)
     {
+        $bResult = false;
+
         // Initialize the response to null
         $response = null;
 
@@ -48,22 +52,29 @@ class SimpleWhoisClient implements WhoisClientInterface
 
             // Set read timeout
             stream_set_timeout($filePointer, $this->timeout);
-            
+
             // Append the response from the server to the response variable until end of file is reached
             while (!feof($filePointer)) {
                 $response .= fgets($filePointer, 128);
             }
 
+            $info = stream_get_meta_data($filePointer);
             // Close the file pointer
             fclose($filePointer);
         } else {
-            return false;
+            throw new ConnectionException();
         }
 
         // return the response, even if we never sent a request
         $this->response = $response;
 
-        return true;
+        if ($info['timed_out']) {
+            throw new ReadTimeOutException();
+        } else {
+            $bResult = true;
+        }
+        
+        return $bResult;
     }
 
     private static function formatQueryString($queryString)
