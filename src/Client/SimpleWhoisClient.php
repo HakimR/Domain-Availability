@@ -12,10 +12,11 @@ namespace RWebServices\DomainAvailability\Client;
 class SimpleWhoisClient implements WhoisClientInterface
 {
     protected $server;
-
     protected $port = 43;
-
     protected $timeout;
+
+    protected $errno;
+    protected $errorstr;
 
     protected $response;
     
@@ -23,6 +24,9 @@ class SimpleWhoisClient implements WhoisClientInterface
         if ($server) $this->server = $server;
         if ($port) $this->port = $port;
         $this->timeout = $timeout;
+
+        $this->errno = null;
+        $this->errorstr = null;
     }
 
     /**
@@ -34,7 +38,7 @@ class SimpleWhoisClient implements WhoisClientInterface
         $response = null;
 
         // Get the filePointer to the socket connection
-        $filePointer = @fsockopen($this->server, $this->port, null, null, $this->timeout); // Suppress warnings
+        $filePointer = @fsockopen($this->server, $this->port, &$this->errno, &$this->errorstr, $this->timeout); // Suppress warnings
 
         // Check if we have a file pointer
         if ($filePointer) {
@@ -120,6 +124,20 @@ class SimpleWhoisClient implements WhoisClientInterface
      */
     public function setTimeout($timeout) {
         $this->timeout = $timeout;
+    }
+
+    /**
+     * @return null
+     */
+    public function getErrno() {
+        return $this->errno;
+    }
+
+    /**
+     * @return null
+     */
+    public function getErrorstr() {
+        return $this->errorstr;
     }
 
 
