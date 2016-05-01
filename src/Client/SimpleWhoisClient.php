@@ -38,7 +38,7 @@ class SimpleWhoisClient implements WhoisClientInterface
         $response = null;
 
         // Get the filePointer to the socket connection
-        $filePointer = @fsockopen($this->server, $this->port, &$this->errno, &$this->errorstr, $this->timeout); // Suppress warnings
+        $filePointer = @fsockopen($this->server, $this->port, $this->errno, $this->errorstr, $this->timeout); // Suppress warnings
 
         // Check if we have a file pointer
         if ($filePointer) {
