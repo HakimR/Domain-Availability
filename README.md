@@ -4,18 +4,18 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 
-A PHP library used to check domain name availability.
+A PHP library used to check domain name availability. Forked from HelgeSverre source.
 
 ## Install
 ```bash
-$ composer require --dev helgesverre/domain-availability
+$ composer require --dev HakimR/domain-availability
 ```
 or 
 
 ```
 {
     "require": {
-        "helgesverre/domain-availability": "~0.2.0"
+        "HakimR/domain-availability": "~0.2.0"
     }
 }
 ```
