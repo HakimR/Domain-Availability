@@ -46,6 +46,9 @@ class SimpleWhoisClient implements WhoisClientInterface
             // Send our query to the file pointer
             fwrite($filePointer, self::formatQueryString($domain));
 
+            // Set read timeout
+            stream_set_timeout($filePointer, $this->timeout);
+            
             // Append the response from the server to the response variable until end of file is reached
             while (!feof($filePointer)) {
                 $response .= fgets($filePointer, 128);
