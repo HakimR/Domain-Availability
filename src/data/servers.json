@@ -109,7 +109,7 @@
   },
   "be": {
     "server": "whois.dns.be",
-    "not_found": "Status: AVAILABLE"
+    "not_found": "Status:\tAVAILABLE"
   },
   "berlin": {
     "server": "whois.nic.berlin",
@@ -193,7 +193,7 @@
   },
   "cat": {
     "server": "whois.cat",
-    "not_found": "NOT FOUND."
+    "not_found": "no matching objects found"
   },
   "catering": {
     "server": "whois.donuts.co",
@@ -214,10 +214,6 @@
   "cf": {
     "server": "whois.dot.cf",
     "not_found": "Invalid query or domain name not known in Dot CF Domain Registry"
-  },
-  "ch": {
-    "server": "whois.nic.ch",
-    "not_found": "We do not have an entry in our database matching your query."
   },
   "cheap": {
     "server": "whois.donuts.co",
@@ -557,7 +553,7 @@
   },
   "hr": {
     "server": "whois.dns.hr",
-    "not_found": "ERROR: no entries found"
+    "not_found": "no entries found"
   },
   "ht": {
     "server": "whois.nic.ht",
@@ -683,10 +679,6 @@
     "server": "whois.donuts.co",
     "not_found": "Domain not found."
   },
-  "li": {
-    "server": "whois.nic.li",
-    "not_found": "We do not have an entry in our database matching your query"
-  },
   "lighting": {
     "server": "whois.donuts.co",
     "not_found": "Domain not found."
@@ -705,7 +697,7 @@
   },
   "lt": {
     "server": "whois.domreg.lt",
-    "not_found": "Status:          available"
+    "not_found": "Status:\t\t\tavailable"
   },
   "lu": {
     "server": "whois.dns.lu",
@@ -757,7 +749,7 @@
   },
   "mg": {
     "server": "whois.nic.mg",
-    "not_found": "Domain Status: Available"
+    "not_found": "Domain Status: No Object Found"
   },
   "miami": {
     "server": "whois-dub.mm-registry.com",
@@ -773,7 +765,7 @@
   },
   "mn": {
     "server": "whois.nic.mn",
-    "not_found": "MATCH"
+    "not_found": "NOT FOUND"
   },
   "mo": {
     "server": "whois.monic.mo",
@@ -1077,7 +1069,7 @@
   },
   "so": {
     "server": "whois.nic.so",
-    "not_found": "DOMAIN NOT FOUND"
+    "not_found": "Not found:"
   },
   "social": {
     "server": "whois.unitedtld.com",
