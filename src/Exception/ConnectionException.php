@@ -11,11 +11,14 @@ namespace RWebServices\DomainAvailability\Exception;
 
 class ConnectionException extends \Exception {
     // Redefine the exception so message isn't optional
-    public function __construct($code = 0, \Exception $previous = null) {
+    public function __construct($server, $port, $code = 0, \Exception $previous = null, $errorstr = null) {
         // some code
 
         // make sure everything is assigned properly
-        parent::__construct("Error to connect to the whois server.");
+        $error = "Error to connect to the whois server $server:$port.";
+
+        if(!is_null($errorstr)) $error .= ' '.$errorstr;
+        parent::__construct($error);
     }
 
     // custom string representation of object

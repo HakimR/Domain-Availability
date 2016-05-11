@@ -32,7 +32,7 @@
       "RWebServices\\DomainAvailability\\Service\\": "src/Service",
       "RWebServices\\DomainAvailability\\Loader\\": "src/Loader",
       "RWebServices\\DomainAvailability\\Client\\": "src/Client",
-      "RwebServices\\DomainAvailability\\Exception\\": "src/Exception"
+      "RWebServices\\DomainAvailability\\Exception\\": "src/Exception"
     }
   }
 }

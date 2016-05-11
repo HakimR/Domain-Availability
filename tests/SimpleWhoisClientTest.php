@@ -22,8 +22,14 @@ class SimpleWhoisClientTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Test that the .com whois server is responding as excpected with google.com
+     */
+    public function testComWhoisClient(){
+        $this->whoisClient->setServer("whois.verisign-grs.com");
 
-    // TODO(22 okt 2015) ~ Helge: Write tests
+        $this->whoisClient->query("google.com");
 
-
+        $this->assertStringStartsWith("\nWhois Server ", $this->whoisClient->getResponse());
+    }
 }

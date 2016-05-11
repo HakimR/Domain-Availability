@@ -17,13 +17,19 @@ class JsonLoaderTest extends \PHPUnit_Framework_TestCase
         require 'vendor/autoload.php';
 
 
-        $this->jsonLoader = new JsonLoader();
-
+        $this->jsonLoader = new JsonLoader('src/data/servers.json');
 
     }
 
+    /**
+     * Test that the it extension is readable from the json table
+     */
+    public function testGetItExtention() {
 
-    // TODO(22 okt 2015) ~ Helge: Write tests
+        $json = $this->jsonLoader->load();
 
+        $this->assertNotEmpty($json);
 
+        $this->assertArrayHasKey('it', $json);
+    }
 }

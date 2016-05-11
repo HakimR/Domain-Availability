@@ -26,6 +26,13 @@ class DomainAvailabilityTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Test that the thisisanonexistantdomain.it is available
+     *
+     * @throws \Exception
+     */
+    public function testItDomain(){
 
-    // TODO(22 okt 2015) ~ Helge: Write tests
+        $this->assertTrue($this->service->isAvailable('thisisanonexistantdomain.it'));
+    }
 }

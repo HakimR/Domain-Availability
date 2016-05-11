@@ -1,6 +1,7 @@
 <?php
 
 namespace RWebServices\DomainAvailability\Client;
+
 use RWebServices\DomainAvailability\Exception\ReadTimeOutException;
 use RWebServices\DomainAvailability\Exception\ConnectionException;
 
@@ -62,7 +63,7 @@ class SimpleWhoisClient implements WhoisClientInterface
             // Close the file pointer
             fclose($filePointer);
         } else {
-            throw new ConnectionException();
+            throw new ConnectionException($this->server, $this->port, $this->errno, null, $this->errorstr);
         }
 
         // return the response, even if we never sent a request
